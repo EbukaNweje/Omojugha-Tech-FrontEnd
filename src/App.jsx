@@ -5,6 +5,7 @@ import Login from './Auth/Login';
 import Cart from './Components/Cart';
 import Layout from './Routes/Layout';
 import Home from './Pages/Home';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
