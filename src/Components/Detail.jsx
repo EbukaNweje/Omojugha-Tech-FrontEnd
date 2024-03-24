@@ -14,6 +14,8 @@ import { Button } from 'react-bootstrap';
 // import { IoCartOutline } from "react-icons/io5";
 
 import styled from 'styled-components'
+import { Icon } from 'react-icons-kit'
+import {star} from 'react-icons-kit/fa/star'
 
 
 
@@ -183,9 +185,8 @@ const DetailTopRightRating = styled.div`
     width: 50%;
     height: 100%;
     /* background-color: red; */
-    background-image: url('https://argone.ng/assets/imgs/theme/rating-stars.png');
-    background-repeat: repeat-x;
-    background-position: 0px 0px;
+    display: flex;
+    align-items: center;
 
 `
 const DetailTopRightReviews = styled.p`
@@ -193,6 +194,7 @@ const DetailTopRightReviews = styled.p`
     font-size: 15px;
     color: #B6B6B6;
     margin-left: 10px;
+    margin-bottom: 0px;
 
 `
 const DetailTopRightPrice = styled.div`
@@ -338,6 +340,17 @@ const DetailBottomText = styled.p`
 
 const Home = () => {
 
+
+    const colors = {
+        yellow: "#ffee00",
+        grey: "#a9a9a9"
+    }
+
+    const stars = Array(5).fill(0)
+    const rating = 4
+
+
+
   return (
 
     <>
@@ -362,7 +375,20 @@ const Home = () => {
                     <Button as={InBtn}>In Stock</Button>
                     <DetailTopRightH1>Samsung Galaxy Watch 6 <br></br> Classic 47mm</DetailTopRightH1>
                     <DetailTopRightRatingContainer>
-                        <DetailTopRightRating></DetailTopRightRating>
+                        <DetailTopRightRating>
+                            {
+                                stars.map((_, index) => {
+                                    return(
+                                        <div style={{color: rating > index ? colors.yellow : colors.grey}}>
+                                            <Icon
+                                                icon={star}
+                                                size={17}
+                                            />
+                                        </div>
+                                    )
+                                })
+                            }
+                        </DetailTopRightRating>
                         <DetailTopRightReviews>(32 reviews)</DetailTopRightReviews>
                     </DetailTopRightRatingContainer>
                     <DetailTopRightPrice>
