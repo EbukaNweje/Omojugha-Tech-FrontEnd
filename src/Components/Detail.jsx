@@ -320,7 +320,7 @@ const DetailBottomTextContainer = styled.div`
     height: auto;
     /* background-color: yellow; */
     margin-top: 60px;
-    margin-bottom: 40px
+    margin-bottom: 40px;
 
 `
 const DetailBottomText = styled.p`
