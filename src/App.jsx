@@ -5,7 +5,6 @@ import Login from './Auth/Login';
 import Cart from './Components/Cart';
 import Layout from './Routes/Layout';
 import Home from './Pages/Home';
-import Footer from './Components/Footer';
 
 
 
@@ -22,19 +21,19 @@ const router = createBrowserRouter([
     element: <Login/>
   },
   {
-    path: '/',
-    element: <Footer/>
+    path: '/cart',
+    element: <Cart/>
   } ,
-  // {
-  //   path: '/',
-  //   element: <Layout/>,
-  //   children: [
-  //     {
-  //       path: '',
-  //       element : <Home/>
-  //     }
-  //   ]
-  // }
+  {
+    path: '/',
+    element: <Layout/>,
+    children: [
+      {
+        path: '',
+        element : <Home/>
+      }
+    ]
+  }
     
 ]);
 
