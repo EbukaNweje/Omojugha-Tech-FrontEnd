@@ -73,7 +73,7 @@ const Products = ({ prod }) => {
       </ProductHeader>
       <ProductWrapper>
         {data.map((items) => (
-          <Card style={{ width: '22%', position: 'relative', margin: '5px' }}>
+          <Card style={{ width: '19%', position: 'relative', margin: '5px' }}>
             <HotLabel>Hot</HotLabel>
             <Card.Img variant="top" src={items.cardImg} alt="Product" />
             <Card.Body style={{ position: 'relative' }}>
