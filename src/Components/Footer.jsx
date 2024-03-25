@@ -17,6 +17,12 @@ import React from 'react'
 
 import styled from "styled-components";
 import { Link } from 'react-router-dom'
+import { Icon } from 'react-icons-kit'
+import {youtubePlay} from 'react-icons-kit/fa/youtubePlay'
+import {twitter} from 'react-icons-kit/entypo/twitter'
+import {pinterest} from 'react-icons-kit/entypo/pinterest'
+import {instagram} from 'react-icons-kit/entypo/instagram'
+import {facebook_1} from 'react-icons-kit/ikons/facebook_1'
 
 
 
@@ -379,17 +385,13 @@ const FooterBottomDetailsMediaImageCircle= styled.div`
 
     width: 20%;
     height: 100%;
-    background-color: #F1D5DF;
+    /* background-color: #F1D5DF; */
+    background-color: #0a58ca;
     border-radius: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-`
-const FooterBottomDetailsMediaImage= styled.img`
-
-    width: 60%;
-    height: 60%;
-    object-fit: contain;
+    cursor: pointer;
 `
 
 
@@ -471,19 +473,44 @@ const Footer = () => {
                         <FooterBottomDetailsFollow>Follow Us</FooterBottomDetailsFollow>
                         <FooterBottomDetailsMediaImageContainer>
                             <FooterBottomDetailsMediaImageCircle>
-                                <FooterBottomDetailsMediaImage src='https://argone.ng/assets/imgs/theme/icons/icon-facebook-brand.svg'></FooterBottomDetailsMediaImage>
+                                <div style={{color: '#fff'}}>
+                                    <Icon
+                                        icon={facebook_1}
+                                        size={14}
+                                    />
+                                </div>
                             </FooterBottomDetailsMediaImageCircle>
                             <FooterBottomDetailsMediaImageCircle>
-                                <FooterBottomDetailsMediaImage src='https://argone.ng/assets/imgs/theme/icons/icon-twitter-brand.svg'></FooterBottomDetailsMediaImage>
+                                <div style={{color: '#fff'}}>
+                                    <Icon
+                                        icon={twitter}
+                                        size={14}
+                                    />
+                                </div>
                             </FooterBottomDetailsMediaImageCircle>
                             <FooterBottomDetailsMediaImageCircle>
-                                <FooterBottomDetailsMediaImage src='https://argone.ng/assets/imgs/theme/icons/icon-instagram-brand.svg'></FooterBottomDetailsMediaImage>
+                                <div style={{color: '#fff'}}>
+                                    <Icon
+                                        icon={instagram}
+                                        size={14}
+                                    />
+                                </div>
                             </FooterBottomDetailsMediaImageCircle>
                             <FooterBottomDetailsMediaImageCircle>
-                                <FooterBottomDetailsMediaImage src='https://argone.ng/assets/imgs/theme/icons/icon-pinterest-brand.svg'></FooterBottomDetailsMediaImage>
+                                <div style={{color: '#fff'}}>
+                                    <Icon
+                                        icon={pinterest}
+                                        size={14}
+                                    />
+                                </div>
                             </FooterBottomDetailsMediaImageCircle>
                             <FooterBottomDetailsMediaImageCircle>
-                                <FooterBottomDetailsMediaImage src='https://argone.ng/assets/imgs/theme/icons/icon-youtube-brand.svg'></FooterBottomDetailsMediaImage>
+                                <div style={{color: '#fff'}}>
+                                    <Icon
+                                        icon={youtubePlay}
+                                        size={14}
+                                    />
+                                </div>
                             </FooterBottomDetailsMediaImageCircle>
                         </FooterBottomDetailsMediaImageContainer>
                     </FooterBottomDetailFollowContainer>
