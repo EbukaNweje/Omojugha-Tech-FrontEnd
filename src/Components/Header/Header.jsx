@@ -10,22 +10,31 @@ import Subheader from './Subheader';
 import DiscoverHeader from './DiscoverHeader';
 
 
-const StyledNavbar = styled(Navbar)`
-  background-color: #fff;
-  border: 1px solid #ebebeb;
-`;
+const HeaderAll = styled.div`
+/* width:100%;
+height: 30vh; */
 
-const StyleNavLink = styled(Nav)`
-  font-weight:700;
-  display:flex;
-  justify-content: space-around;
 `
 
 
 
+const StyledDropdownToggle = styled(Button)`
+  background-color: #00329B;
+  color: white;
+  border: none;
+  &:hover {
+    background-color: #03045e; 
+  }
+`;
 
 
-
+const HeaderStyle = styled(Container)`
+width: 100%;
+height: 20%;
+display: flex;
+justify-content: space-around;
+align-items: center;
+`
 
 
 const Header = () => {
@@ -98,28 +107,26 @@ const Header = () => {
   };
 
   return (
-    <div>
+    <HeaderAll>
       <DiscoverHeader/>
       <Subheader/>
-      <StyledNavbar expand="lg">
+      <Navbar expand="lg" className="bg-body-light">
         <Container>
-        <Navbar  className="bg-body-light">
-        <Navbar.Brand href="#home">
-          <Dropdown>
-            <Dropdown.Toggle as={Button} variant="primary">
-           <RxDashboard/>   Explore All Categories
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item href="#">Category 1</Dropdown.Item>
-              <Dropdown.Item href="#">Category 2</Dropdown.Item>
-              <Dropdown.Item href="#">Category 3</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </Navbar.Brand>
+          <Navbar.Brand href="#home">
+            <Dropdown>
+              <Dropdown.Toggle as={StyledDropdownToggle}>
+                <RxDashboard/> Explore All Categories
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item href="#">Category 1</Dropdown.Item>
+                <Dropdown.Item href="#">Category 2</Dropdown.Item>
+                <Dropdown.Item href="#">Category 3</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-           <StyleNavLink>
-           <Nav className="me-auto">
+            <HeaderStyle className="me-auto">
               <Nav.Link href="#home">Home</Nav.Link>
               <Dropdown
                 show={showBedFrameDropdown}
@@ -218,30 +225,6 @@ const Header = () => {
                 </Dropdown.Menu>
               </Dropdown>
               <Dropdown
-                show={showMobilePhonesDropdown}
-                onMouseEnter={() => handleMainMouseEnter('mobilePhones')}
-                onMouseLeave={() => handleMainMouseLeave('mobilePhones')}
-              >
-                <Dropdown.Toggle as={Nav.Link} id="mobile-phones-dropdown">
-                  Mobile Phones
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item
-                    onMouseEnter={handleNestedMouseEnter}
-                    onMouseLeave={handleNestedMouseLeave}
-                  >
-                    Mobile Phone
-                    {showNestedDropdown && (
-                      <Dropdown.Menu>
-                        <Dropdown.Item href="#">iPhone</Dropdown.Item>
-                        <Dropdown.Item href="#">Samsung</Dropdown.Item>
-                        <Dropdown.Item href="#">Google Pixel</Dropdown.Item>
-                      </Dropdown.Menu>
-                    )}
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-              <Dropdown
                 show={showAccessoriesDropdown}
                 onMouseEnter={() => handleMainMouseEnter('accessories')}
                 onMouseLeave={() => handleMainMouseLeave('accessories')}
@@ -266,13 +249,11 @@ const Header = () => {
                 </Dropdown.Menu>
               </Dropdown>
               <Nav.Link href="#contact">Contact</Nav.Link>
-            </Nav>
-           </StyleNavLink>
+            </HeaderStyle>
           </Navbar.Collapse>
-      </Navbar>
         </Container>
-      </StyledNavbar>
-    </div>
+      </Navbar>
+    </HeaderAll>
   );
 };
 

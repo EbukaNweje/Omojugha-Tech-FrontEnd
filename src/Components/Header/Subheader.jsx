@@ -7,15 +7,43 @@ import styled from 'styled-components'
 
 
 
+const Sub = styled(Container)`
+width: 90%;
+height: 6rem;
+display: flex;
+justify-content: space-around;
+align-items: center;
+`
+
+const Cart = styled.div`
+width:10%;
+height:100%;
+display: flex;
+justify-content:center;
+align-items: center;
+position: relative;
+
+
+& > span {
+   color:#0A58CA;
+  }
+
+`
+const CartCircle = styled(Badge)`
+position: absolute;
+top: 20%;
+right:65%;
+background-color: #ffb703;
+`
+
+
 const HeaderSearchWrapper = styled.div`
-  
   width: 60%;
   height: 55px;
-  /* background-color: red; */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 2px solid #b5b5ff;
+  border: 2px solid #0A58CA;
   border-radius: 6px;
 
 `
@@ -23,8 +51,6 @@ const HeaderSearchCategoryContainer = styled.div`
   
   width: 25%;
   height: 90%;
-  /* background-color: #8888ff; */
-
 `
 const HeaderSearchCategory = styled.select`
   
@@ -35,7 +61,6 @@ const HeaderSearchCategory = styled.select`
 
 `
 const HeaderSearchContainer= styled.div`
-  
   width: 70%;
   height: 100%;
   background-color: transparent;
@@ -45,7 +70,6 @@ const HeaderSearchContainer= styled.div`
 
 `
 const FormControls= styled(FormControl)`
-  
   width: 100%;
   height: 50%;
   background-color: transparent;
@@ -54,22 +78,37 @@ const FormControls= styled(FormControl)`
   border-top: none;
   border-bottom: none;
   border-radius: 0px;
-
 `
+
+const Logo = styled(Navbar.Brand)`
+  width: 15%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+`
+
+
 
 const Subheader = () => {
   return (
     <Navbar bg="light" expand="lg">
-      <Container>
+      <Sub>
         {/* Logo */}
-        <Navbar.Brand href="#home">
+        <Logo href="#home">
           <img
             src={logo}
             height="60"
             className="d-inline-block align-top"
             alt="Logo"
           />
-        </Navbar.Brand>
+        </Logo>
 
     
         {/* Search Input */}
@@ -81,7 +120,6 @@ const Subheader = () => {
               <option value="2">Category 2</option>
               <option value="3">Category 3</option>
             </HeaderSearchCategory>
-            {/* <AiOutlineSearch className="search-icon" /> */}
           </HeaderSearchCategoryContainer>
           <HeaderSearchContainer>
           <FormControls type="search" placeholder="Search..." />
@@ -89,17 +127,18 @@ const Subheader = () => {
         </HeaderSearchWrapper>
 
         {/* Cart */}
-        <div className="cart-wrapper ms-auto">
-          <Badge bg="warning">0</Badge>
-          <LuShoppingCart size={30} className="cart-icon" />
-        </div>
+        <Cart className="cart-wrapper ms-auto">
+          <CartCircle bg='warning'>0</CartCircle>
+          <LuShoppingCart size={25} style={{color:'#c0c0c0'}} className="cart-icon" />
+          <span>Cart</span>
+        </Cart>
 
         {/* Account Dropdown */}
         <NavDropdown title="Account" id="account-dropdown" align="end">
           <NavDropdown.Item>Login</NavDropdown.Item>
           <NavDropdown.Item>Register</NavDropdown.Item>
         </NavDropdown>
-      </Container>
+      </Sub>
     </Navbar>
   );
 };
