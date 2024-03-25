@@ -10,7 +10,6 @@ import Home from './Pages/Home';
 
 
 
-
 const router = createBrowserRouter([
   {
     path: '/signup',
