@@ -1,10 +1,13 @@
 import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Sign from './Auth/Sign';
 import Sign from './Auth/Signup';
 import Login from './Auth/Login';
-import Cart from './Components/Cart';
+// import Cart from './Components/Cart';
+import MyCart from './Components/cartPage/Cart';
 import Layout from './Routes/Layout';
 import Home from './Pages/Home';
+import CheckOutcomponent from './Components/checkoutpage/CheckOut';
 
 
 
@@ -21,7 +24,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/cart',
-    element: <Cart/>
+    element: <MyCart/>
+  } ,
+  {
+    path: '/check',
+    element: <CheckOutcomponent />
   } ,
   {
     path: '/',
