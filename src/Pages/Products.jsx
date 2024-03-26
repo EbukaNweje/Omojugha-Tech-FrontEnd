@@ -41,7 +41,38 @@ const ProductWrapper = styled.div`
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+
+
+  
+  @media screen and (max-width:450px) {
+    flex-direction: column;
+  }
+  @media screen and (max-width:320px) {
+    flex-direction: column;
+  }
 `
+
+
+const CardHol = styled(Card)`
+width: 19%;
+position:relative;
+margin:5px;
+
+
+
+@media screen and (max-width:850px) {
+ width: 30%;
+}
+
+
+@media screen and (max-width:450px) {
+ width: 90%;
+}
+@media screen and (max-width:320px) {
+ width: 90%;
+}
+`
+
 
 const HotLabel = styled.div`
   position: absolute;
@@ -73,7 +104,7 @@ const Products = ({ prod }) => {
       </ProductHeader>
       <ProductWrapper>
         {data.map((items) => (
-          <Card style={{ width: '19%', position: 'relative', margin: '5px' }}>
+          <CardHol>
             <HotLabel>Hot</HotLabel>
             <Card.Img variant="top" src={items.cardImg} alt="Product" />
             <Card.Body style={{ position: 'relative' }}>
@@ -91,7 +122,7 @@ const Products = ({ prod }) => {
                 <BsHeart />
               </BtnHold>
             </Card.Body>
-          </Card>
+          </CardHol>
         ))}
       </ProductWrapper>
     </ProductBody>
