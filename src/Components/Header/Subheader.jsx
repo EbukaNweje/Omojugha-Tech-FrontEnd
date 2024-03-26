@@ -13,6 +13,12 @@ height: 6rem;
 display: flex;
 justify-content: space-around;
 align-items: center;
+
+@media screen and (max-width:320px) {
+ width: 90%;
+ height: 4rem;
+}
+
 `
 
 const Cart = styled.div`
@@ -46,6 +52,10 @@ const HeaderSearchWrapper = styled.div`
   border: 2px solid #0A58CA;
   border-radius: 6px;
 
+  @media screen and (max-width:320px) {
+    display: none;
+}
+
 `
 const HeaderSearchCategoryContainer = styled.div`
   
@@ -78,6 +88,7 @@ const FormControls= styled(FormControl)`
   border-top: none;
   border-bottom: none;
   border-radius: 0px;
+
 `
 
 const Logo = styled(Navbar.Brand)`
@@ -92,8 +103,21 @@ const Logo = styled(Navbar.Brand)`
     height: 100%;
     object-fit: contain;
   }
+  @media screen and (max-width:320px){
+    width: 30%;
+}
 `
+const CartHol = styled(Cart)`
+@media screen and (max-width:320px) {
+ width: 50%;
+}
+`
+const AccountHol = styled(NavDropdown)`
+@media screen and (max-width:320px) {
+ display: none;
+}
 
+`
 
 
 const Subheader = () => {
@@ -127,17 +151,17 @@ const Subheader = () => {
         </HeaderSearchWrapper>
 
         {/* Cart */}
-        <Cart className="cart-wrapper ms-auto">
+        <CartHol className="cart-wrapper">
           <CartCircle bg='warning'>0</CartCircle>
           <LuShoppingCart size={25} style={{color:'#c0c0c0'}} className="cart-icon" />
           <span>Cart</span>
-        </Cart>
+        </CartHol>
 
         {/* Account Dropdown */}
-        <NavDropdown title="Account" id="account-dropdown" align="end">
+        <AccountHol title="Account" id="account-dropdown" align="end">
           <NavDropdown.Item>Login</NavDropdown.Item>
           <NavDropdown.Item>Register</NavDropdown.Item>
-        </NavDropdown>
+        </AccountHol>
       </Sub>
     </Navbar>
   );
