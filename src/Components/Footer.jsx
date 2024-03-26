@@ -1,4 +1,5 @@
 import React from 'react'
+import logo from '../assets/logo.jpg'
 
 // import { 
 //         FooterWrapper,FooterTop,FooterBottom,FooterTopLeft,
@@ -29,7 +30,7 @@ import {facebook_1} from 'react-icons-kit/ikons/facebook_1'
 const FooterWrapper= styled.div`
 
     width: 100%;
-    height: 470px;
+    height: 520px;
     background-color: #000;
     display: flex;
     flex-direction: column;
@@ -52,7 +53,7 @@ const FooterWrapper= styled.div`
 const FooterTop= styled.div`
 
     width: 100%;
-    height: 80%;
+    height: 90%;
     /* background-color: yellow; */
     display: flex;
     gap: 130px;
@@ -118,9 +119,12 @@ const FooterTopAddress= styled.div`
 const FooterTopAddressTop = styled.div`
 
     width: 100%;
-    height: 20%;
-    background-color: brown;
+    height: 30%;
+    /* background-color: brown; */
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     @media screen and (max-width: 983px){
 
@@ -133,6 +137,12 @@ const FooterTopAddressTop = styled.div`
         height : 70px;
     
     }
+
+`
+const FooterTopAddressTopLogo = styled.img`
+    
+    width: 100%;
+    height: 100%;
 
 `
 const FooterTopAddressDetails= styled.div`
@@ -230,6 +240,8 @@ const FooterTopAcount= styled.div`
 const FooterTopAcountText= styled.h1`
 
     font-size: 24px;
+    font-family: "Quiksand", sans-serif;
+    font-weight: 600;
     color: #F4F5F9;
     margin-bottom: 15px;
 
@@ -307,7 +319,7 @@ const FooterTopCompany= styled.div`
 const FooterBottom= styled.div`
 
     width: 98%;
-    height: 20%;
+    height: 15%;
     /* background-color: blue; */
     border-top: 2px solid grey;
     display: flex;
@@ -329,10 +341,11 @@ const FooterBottom= styled.div`
 const FooterBottomDetailsContainer= styled.div`
 
     width: 100%;
-    height: 38%;
+    height: 70%;
     /* background-color: yellow; */
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
 `
 const FooterBottomDetailsContainerCopyRight= styled.p`
@@ -340,6 +353,7 @@ const FooterBottomDetailsContainerCopyRight= styled.p`
     font-size: 13px;
     color: #F8F9FA;
     font-weight: 500;
+    margin-bottom: 0px;
 
 `
 const FooterBottomDetailFollowContainer = styled.div`
@@ -399,8 +413,9 @@ const FooterBottomDetailsMediaImageCircle= styled.div`
 
 
 
-
 const Footer = () => {
+
+    
 
   return (
 
@@ -410,7 +425,9 @@ const Footer = () => {
             <FooterTop>
                 <FooterTopLeft>
                     <FooterTopAddress>
-                        <FooterTopAddressTop></FooterTopAddressTop>
+                        <FooterTopAddressTop>
+                            <FooterTopAddressTopLogo src={logo} />
+                        </FooterTopAddressTop>
                         <FooterTopAddressDetails>
                             <FooterTopAddressDetailsImage>
                                 <FooterTopAddressDetailsImageImg src='https://argone.ng/assets/imgs/theme/icons/phone-icon.svg'></FooterTopAddressDetailsImageImg>
