@@ -140,13 +140,13 @@ const InBtn = styled.button`
 
     width: 80px;
     height: 35px;
-    background-color: #F8EaEF;
+    background-color: #83b5ff;
     border: none;
     margin-top: 25px;
     font-size: 14px;
     font-weight: 600;
     border-radius: 6px;
-    color: #BB2D5E;
+    color: #fff;
 
 `
 const DetailTopRightH1 = styled.h1`
@@ -209,7 +209,7 @@ const DetailTopRightPrice = styled.div`
 `
 const DetailTopNewPrice = styled.h1`
 
-    color: #bb2d5e;
+    color: #0a58ca;
     font-weight: 600;
 
 `
@@ -225,7 +225,7 @@ const AddCartBtn = styled.button`
 
     width: 150px;
     height: 50px;
-    background-color: #BB2D5E;
+    background-color: #0a58ca;
     border: none;
     font-size: 16px;
     font-weight: 600;
@@ -259,7 +259,7 @@ const DetailTopPointText = styled.p`
 `
 const DetailTopPointTextSpan = styled.span`
 
-    color: #BB2D5E;
+    color: #0a58ca;
 
 `
 
@@ -304,7 +304,7 @@ const DetailBottomBtn = styled(InBtn)`
 
     width: 150px;
     height: 50px;
-    color: #BB2D5E;
+    color: #0a58ca;
     font-family: 'quicksand', sans-serif;
     font-weight: 600;
     font-size: 17px;
