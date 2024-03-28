@@ -10,7 +10,6 @@ import { Form, Button, Container, Row, Col,  } from 'react-bootstrap';
   const MainContainer =styled.div`
   width:100vw;
   height:100vh;
-  backgound:black;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -33,7 +32,7 @@ import { Form, Button, Container, Row, Col,  } from 'react-bootstrap';
  border:1px solid #d3d3d3;
   display:flex;
   align-items:center;
-  justify-contents:center;
+  justify-content:center;
   flex-direction:column;
   border-radius:5px;
 
@@ -42,8 +41,8 @@ import { Form, Button, Container, Row, Col,  } from 'react-bootstrap';
   width:95%;
   height:640px;
   display:flex;
-  background:plum
-  justify-content:space-evenly
+  background:plum;
+  justify-content:space-evenly;
 
 
 
@@ -54,8 +53,9 @@ import { Form, Button, Container, Row, Col,  } from 'react-bootstrap';
   width:95%;
   height:700px;
   display:flex;
-  background:plum
-  justify-content:space-evenly
+  background:plum;
+  justify-content:space-evenly;
+
   }
 
   `
@@ -113,7 +113,7 @@ import { Form, Button, Container, Row, Col,  } from 'react-bootstrap';
   width:100%;
    height:100%;
   display:flex;
-  justifycontent:center;
+  justify-content: center;
   flex-direction: column;
 
   @media screen and (max-width: 450px){
@@ -175,6 +175,7 @@ border:none;
 border-radius:6px;
 background:#003399;
 border:none;
+}
 
 `
 
