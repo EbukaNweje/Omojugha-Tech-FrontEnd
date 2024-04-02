@@ -3,6 +3,7 @@ import Hero from './Hero'
 import Products from './Products'
 import Product from '../Components/data.json'
 import Content from './Content'
+import Others from './Others'
 
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
       <Hero/>
       <Products prod={Product}/>
       <Content/>
+      <Others/>
     </div>
   )
 }

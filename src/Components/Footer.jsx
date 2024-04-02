@@ -1,17 +1,7 @@
 import React from 'react'
-import logo from '../assets/logo.jpg'
+import logo from '../assets/logo-removebg-preview.png'
 
-// import { 
-//         FooterWrapper,FooterTop,FooterBottom,FooterTopLeft,
-//         FooterTopRight,FooterTopAddress,FooterTopAcount,FooterTopOurServices,
-//         FooterTopCompany,FooterTopAddressTop,FooterTopAddressDetails,
-//         FooterTopAddressDetailsImage,FooterTopAddressDetailsText,FooterTopAddressDetailsTextNav,
-//         FooterTopAddressDetailsTextNavp,FooterTopAcountText,FooterTopAcountp,FooterBottomDetailsContainer,
-//         FooterBottomDetailsContainerCopyRight,FooterBottomDetailFollowContainer,FooterBottomDetailsFollow,
-//         FooterBottomDetailsMediaImageContainer,FooterBottomDetailsMediaImageCircle,FooterBottomDetailsMediaImage,
-//         FooterTopAddressDetailsImageImg
 
-//     } from './FooterStyle'
 
 
 
@@ -143,6 +133,7 @@ const FooterTopAddressTopLogo = styled.img`
     
     width: 100%;
     height: 100%;
+    object-fit: contain;
 
 `
 const FooterTopAddressDetails= styled.div`
@@ -163,7 +154,7 @@ const FooterTopAddressDetails= styled.div`
 const FooterTopAddressDetailsImage= styled.div`
 
     width: 18%;
-    height: 45px;
+    height: 50px;
     /* background-color: orange; */
     display: flex;
     justify-content: center;
@@ -183,6 +174,7 @@ const FooterTopAddressDetailsImageImg= styled.img`
     width: 70%;
     height: 70%;
     object-fit: contain;
+   
 `
 
 const FooterTopAddressDetailsText= styled.div`
@@ -513,14 +505,7 @@ const Footer = () => {
                                     />
                                 </div>
                             </FooterBottomDetailsMediaImageCircle>
-                            <FooterBottomDetailsMediaImageCircle>
-                                <div style={{color: '#fff'}}>
-                                    <Icon
-                                        icon={pinterest}
-                                        size={14}
-                                    />
-                                </div>
-                            </FooterBottomDetailsMediaImageCircle>
+                        
                             <FooterBottomDetailsMediaImageCircle>
                                 <div style={{color: '#fff'}}>
                                     <Icon

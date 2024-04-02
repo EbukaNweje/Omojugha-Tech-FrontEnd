@@ -2,15 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import { Card } from 'react-bootstrap';
 import { BsHeart } from 'react-icons/bs';
+import { FaStar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const ProductBody = styled.div`
   width: 100%;
   height: max-content;
-`
+`;
 
 const ProductHeader = styled.header`
   width: 100%;
-  height: 5rem;
+  height: 6rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,7 +34,7 @@ const ProductHeader = styled.header`
       transform: scale(1.1);
     }
   }
-`
+`;
 
 const ProductWrapper = styled.div`
   width: 100%;
@@ -42,36 +44,44 @@ const ProductWrapper = styled.div`
   align-items: center;
   flex-wrap: wrap;
 
-
-  
   @media screen and (max-width:450px) {
     flex-direction: column;
   }
   @media screen and (max-width:320px) {
     flex-direction: column;
   }
-`
-
+`;
 
 const CardHol = styled(Card)`
-width: 19%;
-position:relative;
-margin:5px;
+  width: 19%;
+  position:relative;
+  margin:5px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: 360ms ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+
+  @media screen and (max-width:850px) {
+    width: 30%;
+  }
+
+  @media screen and (max-width:450px) {
+    width: 90%;
+  }
+  @media screen and (max-width:320px) {
+    width: 90%;
+  }
+`;
 
 
-
-@media screen and (max-width:850px) {
- width: 30%;
-}
-
-
-@media screen and (max-width:450px) {
- width: 90%;
-}
-@media screen and (max-width:320px) {
- width: 90%;
-}
+const CardOthersContent = styled.div`
+  
 `
+
 
 
 const HotLabel = styled.div`
@@ -83,15 +93,26 @@ const HotLabel = styled.div`
   padding: 5px;
   font-weight: bold;
   border-radius: 5px;
-`
-const BtnHold = styled.div`
-width: 100%;
-height: 10%;
-display: flex;
-justify-content: space-between;
-align-items: center;
-`
+`;
 
+const BtnHold = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const IconHeart = styled.div`
+  width: 20%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const StarIcon = styled(FaStar)`
+  color: #FFC107;
+`;
 
 const Products = ({ prod }) => {
   const data = Object.values(prod);
@@ -108,18 +129,26 @@ const Products = ({ prod }) => {
             <HotLabel>Hot</HotLabel>
             <Card.Img variant="top" src={items.cardImg} alt="Product" />
             <Card.Body style={{ position: 'relative' }}>
-              <div>
+              <CardOthersContent>
+                <Card.Text>
+                  <Link to='/detail' style={{textDecoration:'none'}}>Mobile Phone</Link>
+                </Card.Text>
                 <Card.Title>Product Name</Card.Title>
-                <Card.Text>Category: Mobile Phone</Card.Text>
-                <Card.Text>5 Star Rating</Card.Text>
-                <Card.Text>Company: Apple</Card.Text>
+                <Card.Text>
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <StarIcon key={index} gold={index < items.rating} />
+                  ))}
+                </Card.Text>
+                <Card.Text>By <span style={{color:'#0a58ca',fontWeight:'600'}}>APPLE</span></Card.Text>
                 <Card.Text>$999</Card.Text>
-              </div>
+              </CardOthersContent>
               <BtnHold>
                 <button className="btn btn-primary" style={{ marginRight: '10px' }}>
                   Add to Cart
                 </button>
-                <BsHeart />
+                <IconHeart>
+                  <BsHeart />
+                </IconHeart>
               </BtnHold>
             </Card.Body>
           </CardHol>
@@ -129,4 +158,4 @@ const Products = ({ prod }) => {
   );
 };
 
-export default Products
+export default Products;

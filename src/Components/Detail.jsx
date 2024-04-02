@@ -1,14 +1,5 @@
 import React from 'react'
-// import foodImg from '../images/food.png'
-// import { 
-//     DetailPage, DetailTop, DetailTopLeft, 
-//     DetailTopRight, DetailTopLeftHolder, DetailTopLeftHolderImageCard, 
-//     DetailTopLeftHolderSearch, DetailTopLeftHolderImageCardImg, DetailTopLeftHolderSearchBtn,
-//     InBtn,DetailTopRightH1,DetailBottom,DetailBottomContainer,DetailBottomBtn,DetailBottomTextContainer,
-//     DetailBottomText,DetailTopRightRatingContainer,DetailTopRightRating,DetailTopRightReviews,
-//     DetailTopRightPrice,DetailTopNewPrice,DetailTopOldPrice,AddCartBtn,DetailTopPoint,DetailTopPointText,
-//     DetailTopPointTextSpan
-//     } from './homeStyle'
+
 
 import { Button } from 'react-bootstrap';
 // import { IoCartOutline } from "react-icons/io5";
