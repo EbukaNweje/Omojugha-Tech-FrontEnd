@@ -9,14 +9,9 @@ import { RxDashboard } from "react-icons/rx";
 import Subheader from './Subheader';
 import DiscoverHeader from './DiscoverHeader';
 
-
 const HeaderAll = styled.div`
-/* width:100%;
-height: 30vh; */
-
+width:100%;
 `
-
-
 
 const StyledDropdownToggle = styled(Button)`
   background-color: #00329B;
@@ -25,78 +20,27 @@ const StyledDropdownToggle = styled(Button)`
   &:hover {
     background-color: #03045e; 
   }
-`;
+`
 
+const ContainerBody = styled(Container)`
 
-const HeaderStyle = styled(Container)`
-width: 100%;
-height: 20%;
-display: flex;
-justify-content: space-around;
-align-items: center;
 `
 
 
+
+
+
+
+const HeaderStyle = styled(Container)`
+display: flex;
+
+`
+
+
+
+
 const Header = () => {
-  const [showBedFrameDropdown, setShowBedFrameDropdown] = useState(false);
-  const [showSmartHomeDropdown, setShowSmartHomeDropdown] = useState(false);
-  const [showKitchenItemsDropdown, setShowKitchenItemsDropdown] = useState(false);
-  const [showPhonesDropdown, setShowPhonesDropdown] = useState(false);
-  const [showMobilePhonesDropdown, setShowMobilePhonesDropdown] = useState(false);
-  const [showAccessoriesDropdown, setShowAccessoriesDropdown] = useState(false);
   const [showNestedDropdown, setShowNestedDropdown] = useState(false);
-
-  const handleMainMouseEnter = (dropdown) => {
-    switch (dropdown) {
-      case 'bedFrame':
-        setShowBedFrameDropdown(true);
-        break;
-      case 'smartHome':
-        setShowSmartHomeDropdown(true);
-        break;
-      case 'kitchenItems':
-        setShowKitchenItemsDropdown(true);
-        break;
-      case 'phones':
-        setShowPhonesDropdown(true);
-        break;
-      case 'mobilePhones':
-        setShowMobilePhonesDropdown(true);
-        break;
-      case 'accessories':
-        setShowAccessoriesDropdown(true);
-        break;
-      default:
-        break;
-    }
-    setShowNestedDropdown(true);
-  };
-
-  const handleMainMouseLeave = (dropdown) => {
-    switch (dropdown) {
-      case 'bedFrame':
-        setShowBedFrameDropdown(false);
-        break;
-      case 'smartHome':
-        setShowSmartHomeDropdown(false);
-        break;
-      case 'kitchenItems':
-        setShowKitchenItemsDropdown(false);
-        break;
-      case 'phones':
-        setShowPhonesDropdown(false);
-        break;
-      case 'mobilePhones':
-        setShowMobilePhonesDropdown(false);
-        break;
-      case 'accessories':
-        setShowAccessoriesDropdown(false);
-        break;
-      default:
-        break;
-    }
-    setShowNestedDropdown(false);
-  };
 
   const handleNestedMouseEnter = () => {
     setShowNestedDropdown(true);
@@ -111,8 +55,8 @@ const Header = () => {
       <DiscoverHeader/>
       <Subheader/>
       <Navbar expand="lg" className="bg-body-light">
-        <Container>
-          <Navbar.Brand href="#home">
+        <ContainerBody>
+          <Navbar.Brand href="/">
             <Dropdown>
               <Dropdown.Toggle as={StyledDropdownToggle}>
                 <RxDashboard/> Explore All Categories
@@ -126,94 +70,18 @@ const Header = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <HeaderStyle className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Dropdown
-                show={showBedFrameDropdown}
-                onMouseEnter={() => handleMainMouseEnter('bedFrame')}
-                onMouseLeave={() => handleMainMouseLeave('bedFrame')}
-              >
-                <Dropdown.Toggle as={Nav.Link} id="bed-frame-dropdown">
-                  Home Items
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item
-                    onMouseEnter={handleNestedMouseEnter}
-                    onMouseLeave={handleNestedMouseLeave}
-                  >
-                    Bed Frame
-                    {showNestedDropdown && (
-                      <Dropdown.Menu>
-                        <Dropdown.Item href="#">Lifemate</Dropdown.Item>
-                        <Dropdown.Item href="#">Bedtime</Dropdown.Item>
-                        <Dropdown.Item href="#">Bedder</Dropdown.Item>
-                      </Dropdown.Menu>
-                    )}
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-              <Dropdown
-                show={showSmartHomeDropdown}
-                onMouseEnter={() => handleMainMouseEnter('smartHome')}
-                onMouseLeave={() => handleMainMouseLeave('smartHome')}
-              >
-                <Dropdown.Toggle as={Nav.Link} id="smart-home-dropdown">
-                  Smart Homes
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item
-                    onMouseEnter={handleNestedMouseEnter}
-                    onMouseLeave={handleNestedMouseLeave}
-                  >
-                    Smart Home
-                    {showNestedDropdown && (
-                      <Dropdown.Menu>
-                        <Dropdown.Item href="#">Smart Light</Dropdown.Item>
-                        <Dropdown.Item href="#">Smart Thermostat</Dropdown.Item>
-                        <Dropdown.Item href="#">Smart Lock</Dropdown.Item>
-                      </Dropdown.Menu>
-                    )}
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-              <Dropdown
-                show={showKitchenItemsDropdown}
-                onMouseEnter={() => handleMainMouseEnter('kitchenItems')}
-                onMouseLeave={() => handleMainMouseLeave('kitchenItems')}
-              >
-                <Dropdown.Toggle as={Nav.Link} id="kitchen-items-dropdown">
-                  Kitchen Items
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item
-                    onMouseEnter={handleNestedMouseEnter}
-                    onMouseLeave={handleNestedMouseLeave}
-                  >
-                    Kitchen Item
-                    {showNestedDropdown && (
-                      <Dropdown.Menu>
-                        <Dropdown.Item href="#">Knife Set</Dropdown.Item>
-                        <Dropdown.Item href="#">Cookware Set</Dropdown.Item>
-                        <Dropdown.Item href="#">Blender</Dropdown.Item>
-                      </Dropdown.Menu>
-                    )}
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-              <Dropdown
-                show={showPhonesDropdown}
-                onMouseEnter={() => handleMainMouseEnter('phones')}
-                onMouseLeave={() => handleMainMouseLeave('phones')}
-              >
+            <HeaderStyle>
+              <Nav.Link href="/">Home</Nav.Link>
+              <Dropdown>
                 <Dropdown.Toggle as={Nav.Link} id="phones-dropdown">
-                  Phones
+                  Mobile Phones
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                   <Dropdown.Item
                     onMouseEnter={handleNestedMouseEnter}
                     onMouseLeave={handleNestedMouseLeave}
                   >
-                    Phone
+                    Phones
                     {showNestedDropdown && (
                       <Dropdown.Menu>
                         <Dropdown.Item href="#">iPhone</Dropdown.Item>
@@ -224,11 +92,7 @@ const Header = () => {
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
-              <Dropdown
-                show={showAccessoriesDropdown}
-                onMouseEnter={() => handleMainMouseEnter('accessories')}
-                onMouseLeave={() => handleMainMouseLeave('accessories')}
-              >
+              <Dropdown>
                 <Dropdown.Toggle as={Nav.Link} id="accessories-dropdown">
                   Accessories
                 </Dropdown.Toggle>
@@ -248,10 +112,10 @@ const Header = () => {
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
-              <Nav.Link href="#contact">Contact</Nav.Link>
+              <Nav.Link href="/">Contact Us</Nav.Link>
             </HeaderStyle>
           </Navbar.Collapse>
-        </Container>
+        </ContainerBody>
       </Navbar>
     </HeaderAll>
   );

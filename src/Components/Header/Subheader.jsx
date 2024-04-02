@@ -1,9 +1,10 @@
 import React from 'react';
-import { Container, Navbar, NavDropdown, Badge, Form, FormControl } from 'react-bootstrap';
-import logo from '../../assets/logo.jpg';
+import { Container, Navbar, NavDropdown, Badge, FormControl } from 'react-bootstrap';
+import logo from '../../assets/logo-removebg-preview.png';
 import { LuShoppingCart } from "react-icons/lu";
 import {AiOutlineSearch} from 'react-icons/ai'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom';
 
 
 
@@ -13,6 +14,7 @@ height: 6rem;
 display: flex;
 justify-content: space-around;
 align-items: center;
+
 
 @media screen and (max-width:320px) {
  width: 90%;
@@ -79,15 +81,12 @@ const HeaderSearchContainer= styled.div`
   align-items: center;
 
 `
-const FormControls= styled(FormControl)`
-  width: 100%;
+const FormControls= styled.input`
+ width: 100%;
   height: 50%;
   background-color: transparent;
-  border-left: 1px solid grey;
-  border-right: none;
-  border-top: none;
-  border-bottom: none;
-  border-radius: 0px;
+  border: none;
+  outline: none;
 
 `
 
@@ -146,7 +145,7 @@ const Subheader = () => {
             </HeaderSearchCategory>
           </HeaderSearchCategoryContainer>
           <HeaderSearchContainer>
-          <FormControls type="search" placeholder="Search..." />
+            <FormControls type="search" placeholder='Search for items...' />
           </HeaderSearchContainer>
         </HeaderSearchWrapper>
 
@@ -159,8 +158,14 @@ const Subheader = () => {
 
         {/* Account Dropdown */}
         <AccountHol title="Account" id="account-dropdown" align="end">
-          <NavDropdown.Item>Login</NavDropdown.Item>
-          <NavDropdown.Item>Register</NavDropdown.Item>
+          <NavDropdown.Item >
+            <Link to='/signin' style={{textDecoration:'none'}}>Login</Link>
+          </NavDropdown.Item>
+          <NavDropdown.Item>
+            <Link to='signup'  style={{textDecoration:'none'}}>
+              Register
+            </Link>
+          </NavDropdown.Item>
         </AccountHol>
       </Sub>
     </Navbar>

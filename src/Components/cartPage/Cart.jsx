@@ -59,20 +59,6 @@ const MyCart = () => {
 
     return(
         <CartWrapper>
-            <Cartnav>
-                <Navitems>
-                    <Navdiv>
-                        <BiHomeAlt />
-                        <Paragraph>Home</Paragraph>
-                    </Navdiv>
-                    <Navdiv>
-                        <Paragraph>Shop</Paragraph>
-                    </Navdiv>
-                    <Navdiv>
-                        <Paragraph>Cart</Paragraph>
-                    </Navdiv>
-                </Navitems>
-            </Cartnav>
             <Cartwrite>
                 <Cartwriteup>
                     <H1>Your Cart</H1>
