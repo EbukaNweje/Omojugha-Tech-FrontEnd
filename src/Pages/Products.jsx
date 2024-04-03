@@ -4,6 +4,7 @@ import { Card } from 'react-bootstrap';
 import { BsHeart } from 'react-icons/bs';
 import { FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import {motion} from 'framer-motion'
 
 const ProductBody = styled.div`
   width: 100%;
@@ -36,7 +37,7 @@ const ProductHeader = styled.header`
   }
 `;
 
-const ProductWrapper = styled.div`
+const ProductWrapper = styled(motion.div)`
   width: 100%;
   height: 90%;
   display: flex;
@@ -117,13 +118,32 @@ const StarIcon = styled(FaStar)`
 const Products = ({ prod }) => {
   const data = Object.values(prod);
 
+
+  const motionVariant = {
+    open: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.7,
+      },
+    },
+    close: {
+      opacity: 0,
+      y: "100px",
+    },
+  };
+
+
+
   return (
     <ProductBody>
       <ProductHeader>
         <h2>Popular Products</h2>
         <span>All Products</span>
       </ProductHeader>
-      <ProductWrapper>
+      <ProductWrapper  variants={motionVariant}
+       initial="close"
+       animate="open" >
         {data.map((items) => (
           <CardHol>
             <HotLabel>Hot</HotLabel>
