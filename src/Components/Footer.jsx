@@ -1,11 +1,5 @@
 import React from 'react'
 import logo from '../assets/logo-removebg-preview.png'
-
-
-
-
-
-
 import styled from "styled-components";
 import { Link } from 'react-router-dom'
 import { Icon } from 'react-icons-kit'
@@ -15,9 +9,10 @@ import {pinterest} from 'react-icons-kit/entypo/pinterest'
 import {instagram} from 'react-icons-kit/entypo/instagram'
 import {facebook_1} from 'react-icons-kit/ikons/facebook_1'
 
+import { motion } from 'framer-motion';
 
 
-const FooterWrapper= styled.div`
+const FooterWrapper= styled(motion.div)`
 
     width: 100%;
     height: 520px;
@@ -409,11 +404,27 @@ const Footer = () => {
 
     
 
+    const motionVariant = {
+        open: {
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 0.7,
+          },
+        },
+        close: {
+          opacity: 0,
+          y: "100px",
+        },
+      };
+
   return (
 
     <>
     
-        <FooterWrapper>
+        <FooterWrapper  variants={motionVariant}
+       initial="close"
+       animate="open" >
             <FooterTop>
                 <FooterTopLeft>
                     <FooterTopAddress>
